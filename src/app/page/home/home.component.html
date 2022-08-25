@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <header>
+        <h1>Service Providers</h1>
+    </header>
+    <!-- categoryList -->
+
+    <div class="col-sm-2 mt-4 mb-3">
+        <select class="form-select col-7" aria-label="Default select example">
+            <br>
+            <option selected>Select Category</option>
+            <option *ngFor="let cl of categoryList">{{cl | titlecase}}</option>
+        </select>
+    </div>
+
+    <!-- show data -->
+    
+    <div class="row">
+        <div class = "col-lg-3 col-12 mt-3 mb-3"  *ngFor="let item of showAllData">
+            <a href="{{item.url}}" target="_blank">
+                <div class="box">
+                    <h2>{{item.name | titlecase}}</h2>
+                    <p><i class="bi bi-tag"></i>{{item.category | titlecase}} | <span>{{item.type | titlecase}}<i class="bi bi-back"></i></span></p>
+                    <p>Visit Site  <i class="bi bi-arrow-right"></i></p>
+                </div>
+            </a>
+
+        </div>
+        
+    </div>
+
+</div>
